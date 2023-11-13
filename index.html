@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sage Protocol</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+
+    </nav>
+
+    <main>
+        <h1>Sage Protocol</h1>
+        <hr>
+        <div id="content">
+        <h2>Codzienne zadania:</h2>
+        <ul>
+            <li><input type="checkbox"> Zimny Prysznic</li>
+            <li><input type="checkbox"> 1 Pompka</li>
+            <li><input type="checkbox"> Głęboki Oddech</li>
+            <li><input type="checkbox"> Zdanie Wdzięczności</li>
+            <li><input type="checkbox"> Przeczytaj Stronę</li>
+        </ul>
+        </div>
+    </main>
+
+    <div id="progress">0%</div>
+    <div id="congratulations">Congratulations!
+        <img src="congratulations.jpg" id="naruto">
+    </div>
+    
+
+    
+  <script>
+        // Pobierz wszystkie checkboxy
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        // Pobierz elementy z progresem i gratulacjami
+        const progressText = document.getElementById('progress');
+        const congratulationsText = document.getElementById('congratulations');
+
+        // Oblicz i wyświetl procent ukończenia
+        function updateProgress() {
+            const totalCheckboxes = checkboxes.length;
+            const checkedCheckboxes = [...checkboxes].filter(checkbox => checkbox.checked).length;
+            const percentComplete = (checkedCheckboxes / totalCheckboxes) * 100;
+
+            progressText.textContent = `${percentComplete.toFixed(0)}%`;
+
+            // Sprawdź, czy osiągnięto 100% ukończenia
+            if (percentComplete === 100) {
+                congratulationsText.style.display = 'block';
+            } else {
+                congratulationsText.style.display = 'none';
+            }
+        }
+
+        // Dodaj nasłuchiwacze zdarzeń dla każdego checkboxa
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateProgress);
+        });
+
+        // Wywołaj funkcję aktualizacji progresu na start
+        updateProgress();
+    </script> 
+</body>
+</html>

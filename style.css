@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'WonderWorld';
+  src: url('wonderworld.otf') format('opentype');
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-family: WonderWorld;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+        font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+li {
+    list-style-type: none;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+        font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+#naruto {
+    height: 35vw;
+    max-height: 300px;
+}
+
+input[type="checkbox"] {
+    width: 30px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+#progress {
+            color: blue;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+#congratulations {
+            display: none;
+            color: green;
+            text-align: center;
+            font-size: 2rem;
+            margin-top:20px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
